@@ -1,16 +1,12 @@
-import gsap from "gsap";
-
 export function setUpFadeInUpAnima(targets) {
 	const options = {
 		root: null,
 		rootMargin: "-10% 0px",
 		threshold: 0,
 	};
-	
 	const observer = new IntersectionObserver(intersectionChecker, options);
 
 	targets.forEach((target) => {
-		setInvisibleStyle(target);
 		observer.observe(target);
 	});
 }
@@ -22,15 +18,5 @@ function intersectionChecker(items) {
 }
 
 function appear(element) {
-	gsap.to(element.target, {
-		opacity: 1,
-		y: 0,
-		duration: 0.3,
-		ease: "Power3.easeOut",
-	});
-}
-
-function setInvisibleStyle(el) {
-	el.style.opacity = 0;
-	el.style.transform = 'translateY(50px)';
+	element.target.classList.add('fade-in-up_visible')
 }
