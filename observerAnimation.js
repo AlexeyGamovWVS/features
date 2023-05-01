@@ -1,3 +1,4 @@
+//observerAnimation.js
 export default class ObserverAnimation {
   constructor({
     elementsSelector,
@@ -47,6 +48,7 @@ export default class ObserverAnimation {
 }
 
 // TO USE DO FOLLOW (EXAMPLE):
+//index.js or another main script file
 const animationName = {
   elementsSelector: ".fade-in-up",
   animationClass: "fade-in-up_visible",
